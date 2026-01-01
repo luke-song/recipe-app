@@ -7,6 +7,8 @@ import { supabase } from "@/lib/supabase"
 import { Recipe } from "@/types/recipe"
 import { Plus } from "lucide-react"
 
+export const revalidate = 0 // Disable caching to always show fresh data
+
 async function getRecipes(): Promise<Recipe[]> {
   const { data, error } = await supabase
     .from('recipes')

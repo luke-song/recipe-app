@@ -7,6 +7,8 @@ import { DeleteRecipeButton } from "@/components/DeleteRecipeButton"
 import { ThemeToggle } from "@/components/ThemeToggle"
 import { ArrowLeft, Clock, Users, DollarSign, Edit } from "lucide-react"
 
+export const revalidate = 0 // Disable caching to always show fresh data
+
 async function getRecipe(id: string): Promise<Recipe | null> {
   const { data, error } = await supabase
     .from('recipes')

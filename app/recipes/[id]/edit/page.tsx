@@ -105,7 +105,8 @@ export default function EditRecipePage() {
         throw new Error(error.message || "Failed to update recipe")
       }
 
-      router.push(`/recipes/${recipeId}`)
+      // Redirect to home page and refresh to show updated data
+      router.push('/')
       router.refresh()
     } catch (error) {
       console.error("Error updating recipe:", error)
